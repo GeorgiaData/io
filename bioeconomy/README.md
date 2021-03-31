@@ -33,6 +33,14 @@ The following method was created in the summer of 2020 to add a biofuels commodi
 [LCA Methodology to incorporate new technologies in USEEIO (PDF)](docs/LCA%20New%20tech%20Methodology%20%28V02%20CGA%202020-08-05%29.pdf) and [5 pathways (Excel)](docs/5%20pathways%20%28v07%20CGA%202020-07-31%29.xlsx)  
 By Cindy Azuero Pedraza, PhD student in the H. Milton School of Industrial and Systems Engineering at Georgia Tech  
 
+[Adding New Technologies to US Input-Output Model](../../io/naics/)   
+
 [Bioeconomy Planner](../../localsite/info/#go=bioeconomy) - Industries and Environmental Impacts  
 
-[Adding New Technologies to US Input-Output Model](../../io/naics/)
+
+
+<img src="img/waste-to-energy.jpg"><br>Source: - <a href="https://www.powermag.com/waste-to-energy-technology-options-increase-but-remain-underutilized/">Waste-to-Energy Technology Options Increase - Lee County, Florida Case Study</a>  
+
+ADTE = Anaerobic Digestion to Energy  
+LFG = Land Fill Gas / MSW = Municiple Solid Waste  
+RDF = Refuse-diverted fuel, PEF = Process-Engineered Fuel  

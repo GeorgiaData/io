@@ -3,7 +3,8 @@ import asyncio
 import websockets
 
 import numpy as np
-from sklearn.externals import joblib
+#from sklearn.externals import joblib
+import joblib
 
 model_2 = joblib.load(open('../resources/Model2.sav', 'rb'))
 

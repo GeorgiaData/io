@@ -5,25 +5,44 @@
     <meta charset="utf-8">
     <title>IO Tables</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon">
     <link rel="stylesheet" type="text/css" href="widgets.css">
 </head>
 
 <body>
     <div style="margin: 25px;">
-        <div class="grid-12" style="margin: 0 auto;">
-            <div class="col-1 span-4">
-                <div id="inputs" class="sector-list">
-                </div>
+
+        <div class="ioColumns">
+
+            <div class="ioColumn">
+              <div class="ioColumnInside">
+                  <h2>Upstream</h2>
+                  Input from Suppliers
+                  <div id="inputs" class="sector-list">
+                  </div>
+              </div>
             </div>
-            <div class="col-5 span-4">
+
+            <div class="ioColumn">
+              <div class="ioColumnInside">
+                <h2>Commodities</h2>
+                <div>Select Goods and Services...</div>
                 <div id="sector-list" class="sector-list">
                 </div>
+              </div>
             </div>
-            <div class="col-9 span-4">
-                <div id="outputs" class="sector-list">
-                </div>
+
+            <div class="ioColumn">
+              <div class="ioColumnInside">
+                <h2>Downstream</h2>
+                  Output to Buyers
+                  <div id="outputs" class="sector-list">
+                  </div>
+              </div>
             </div>
+
         </div>
+
     </div>
 
     <script src="lib/d3.min.js"></script>

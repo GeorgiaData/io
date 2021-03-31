@@ -21,7 +21,7 @@ Make and Use tables, A and B matrices , Y vector
 
 ## Modeling Steps
 
-These do not include software or management specificities, only include steps in a IO-LCA (EEIO) modelling considering some information about how it is implemented in useeior. We're applying the following steps in the [modeleearth useeior fork](https://github.com/modelearth/useeior/). Click "Clone or download" to begin.   
+These do not include software or management specificities, only include steps in a IO-LCA (EEIO) Modeling considering some information about how it is implemented in useeior. We're applying the following steps in the [modeleearth useeior fork](https://github.com/modelearth/useeior/). Click "Clone or download" to begin.   
 
  The following steps are based on the LCA EEIO methodology in [LCAtextbook.com](https://www.lcatextbook.com/) and the way this model is implemented in useeior. Also based on the document "ERG_useeio disaggregation memo_draft.pdf" and others.
 

@@ -15,6 +15,11 @@ import { DownloadSection } from "./download";
 import { ListHeader } from "./list-header";
 import { SectorHeader, InputOutputCells } from "./iotable";
 
+const Currency = new Intl.NumberFormat("en-US", {
+    minimumFractionDigits: 3,
+    maximumFractionDigits: 3,
+});
+
 export class SectorList extends Widget {
 
     /**
@@ -31,8 +36,6 @@ export class SectorList extends Widget {
      */
     sectors: Sector[];
 
-    private _naicsAttr: string;
-
     /**
      * The direct requirements matrix A of the underlying input-output model.
      * This matrix is only loaded if sector inputs or outputs should be
@@ -40,22 +43,24 @@ export class SectorList extends Widget {
      */
     matrixA: Matrix;
 
+    _naicsCodes: string[];
+
     constructor(private model: Model, private selector: string) {
         super();
         this.ready();
         const parent = document.querySelector(selector);
         if (parent) {
-            this._naicsAttr = parent.getAttribute("data-naics");
-            const observer = new MutationObserver(mutations => {
-                mutations.forEach(mutation => {
+            const naics = parent.getAttribute("data-naics");
+            if (strings.isNotEmpty(naics)) {
+                this._naicsCodes = naics.split(",");
+            }
+            const observer = new MutationObserver((mutations) => {
+                mutations.forEach((mutation) => {
                     if (mutation.attributeName === "data-naics") {
-                        this._naicsAttr = parent.getAttribute("data-naics");
-                        const config: Config = this.config
-                            ? { ... this.config }
-                            : {};
-                        config.naics = this._naicsAttr
-                            ? this._naicsAttr.split(",").map(code => code.trim())
-                            : undefined;
+                        const naics = parent.getAttribute("data-naics");
+                        this._naicsCodes = naics.split(",");
+                        const config: Config = this.config ? { ...this.config } : {};
+                        config.naics = this._naicsCodes;
                         this.handleUpdate(config);
                     }
                 });
@@ -67,7 +72,6 @@ export class SectorList extends Widget {
     }
 
     protected async handleUpdate(config: Config) {
-
         // run a new calculation if necessary
         const needsCalc = this.needsCalculation(this.config, config);
         if (needsCalc) {
@@ -85,34 +89,17 @@ export class SectorList extends Widget {
             const { sectors } = await this.model.singleRegionSectors();
             this.sectors = sectors;
         }
-        const _naics = config.naics
-            ? config.naics
-            : this._naicsAttr
-                ? this._naicsAttr.split(",").map(code => code.trim())
-                : null;
-        if (!_naics) {
-            this.sectors.sort((s1, s2) => strings.compare(s1.name, s2.name));
-        } else {
-            const dups: { [code: string]: boolean } = {};
-            const codes = _naics.map(ncode => naics.toBEA(ncode))
-                .filter(code => !code || dups[code]
-                    ? false
-                    : dups[code] = true
-                );
-            const sectorIdx: { [code: string]: Sector } = {};
-            this.sectors.reduce((idx, sector) => {
-                idx[sector.code] = sector;
-                return idx;
-            }, sectorIdx);
-            this.sectors = codes.map(code => sectorIdx[code])
-                .filter(sector => sector);
-        }
+
+        this.sectors.sort((s1, s2) => strings.compare(s1.name, s2.name));
+        const naicsCodes = this._naicsCodes || config.naics;
+        this.sectors = naics.filterByNAICS(naicsCodes, this.sectors);
 
         // load the matrix A for the display of sector inputs or outputs
         // if this is required
-        if (!this.matrixA &&
-            (strings.isMember("inputs", config.view)
-                || strings.isMember("outputs", config.view))) {
+        if (!this.matrixA
+            && (strings.isMember("inputs", config.view)
+                || strings.isMember("outputs", config.view))
+        ) {
             this.matrixA = await this.model.matrix("A");
         }
 
@@ -122,19 +109,17 @@ export class SectorList extends Widget {
             const demand = await this.model.demand(demandID);
             if (demand) {
                 const values: { [id: string]: number } = {};
-                demand.forEach(e => values[e.sector] = e.amount);
+                demand.forEach((e) => (values[e.sector] = e.amount));
                 // this aggregates the demand values by sector
                 // code for multi-regional models
                 this.demand = {};
-                for (const sector of (await this.model.sectors())) {
+                for (const sector of await this.model.sectors()) {
                     const val = values[sector.id];
                     if (!val) {
                         continue;
                     }
                     const sum = this.demand[sector.code];
-                    this.demand[sector.code] = sum
-                        ? sum + val
-                        : val;
+                    this.demand[sector.code] = sum ? sum + val : val;
                 }
             }
         }
@@ -143,12 +128,12 @@ export class SectorList extends Widget {
 
         ReactDOM.render(
             <Component widget={this} />,
-            document.querySelector(this.selector));
+            document.querySelector(this.selector),
+        );
     }
 
     private needsCalculation(oldConfig: Config, newConfig: Config) {
-        if (!newConfig || !strings.isMember("mosaic", newConfig.view))
-            return false;
+        if (!newConfig || !strings.isMember("mosaic", newConfig.view)) return false;
 
         if (!oldConfig || !this.result) {
             return true;
@@ -160,7 +145,7 @@ export class SectorList extends Widget {
             "analysis",
             "year",
             "location",
-            "view"
+            "view",
         ];
         for (const field of fields) {
             if (oldConfig[field] !== newConfig[field]) {
@@ -172,7 +157,6 @@ export class SectorList extends Widget {
 }
 
 async function calculate(model: Model, config: Config): Promise<HeatmapResult> {
-
     // for plain matrices => wrap the matrix into a result
     if (!config.analysis) {
         const M = config.perspective === "direct"
@@ -183,8 +167,8 @@ async function calculate(model: Model, config: Config): Promise<HeatmapResult> {
         return HeatmapResult.from(model, {
             data: M.data,
             totals: ones(indicators.length),
-            indicators: indicators.map(i => i.code),
-            sectors: sectors.map(s => s.id),
+            indicators: indicators.map((i) => i.code),
+            sectors: sectors.map((s) => s.id),
         });
     }
 
@@ -198,7 +182,6 @@ async function calculate(model: Model, config: Config): Promise<HeatmapResult> {
 }
 
 const Component = (props: { widget: SectorList }) => {
-
     const config = props.widget.config;
     const [sorter, setSorter] = React.useState<Indicator | null>(null);
     const [searchTerm, setSearchTerm] = React.useState<string | null>(null);
@@ -208,29 +191,24 @@ const Component = (props: { widget: SectorList }) => {
 
     let sectors = props.widget.sectors;
     if (searchTerm) {
-        sectors = sectors.filter(
-            s => strings.search(s.name, searchTerm) >= 0);
+        sectors = sectors.filter((s) => strings.search(s.name, searchTerm) >= 0);
     }
 
     // create the sector ranking, if there is a result
     let ranking: [Sector, number][];
     if (!result) {
-        ranking = sectors.map(s => [s, 0]);
+        ranking = sectors.map((s) => [s, 0]);
     } else {
         const ranks: { [code: string]: number } = {};
-        result.getRanking(sorter ? [sorter] : indicators)
-            .reduce((r, rank) => {
-                const sector = rank[0];
-                const value = rank[1];
-                r[sector.code] = value;
-                return r;
-            }, ranks);
-        ranking = sectors.map(sector => {
+        result.getRanking(sorter ? [sorter] : indicators).reduce((r, rank) => {
+            const sector = rank[0];
+            const value = rank[1];
+            r[sector.code] = value;
+            return r;
+        }, ranks);
+        ranking = sectors.map((sector) => {
             const value = ranks[sector.code];
-            return [
-                sector,
-                value ? value : 0,
-            ];
+            return [sector, value ? value : 0];
         });
         ranking.sort(([_s1, rank1], [_s2, rank2]) => rank2 - rank1);
     }
@@ -240,50 +218,57 @@ const Component = (props: { widget: SectorList }) => {
     const page = config.page ? config.page : 1;
     ranking = paging.select(ranking, { count, page });
 
-    const rows: JSX.Element[] = ranking.map(([sector, rank]) =>
-        <Row key={sector.code}
+    const rows: JSX.Element[] = ranking.map(([sector, rank]) => (
+        <Row
+            key={sector.code}
             sector={sector}
             sortIndicator={sorter}
             widget={props.widget}
-            rank={rank} />
-    );
+            rank={rank}
+        />
+    ));
 
     return (
         <>
             {
                 // display the matrix selector if we display a result
-                config.selectmatrix && props.widget.result
-                    ? <MatrixCombo config={config} widget={props.widget} />
-                    : <></>
+                config.selectmatrix && props.widget.result ? (
+                    <MatrixCombo config={config} widget={props.widget} />
+                ) : (
+                        <></>
+                    )
             }
             {
                 // display download links if this is configured
-                config.showdownload
-                    ? <DownloadSection widget={props.widget} />
-                    : <></>
+                config.showdownload ? <DownloadSection widget={props.widget} /> : <></>
             }
-            <table style={{
-                marginRight: "80px"
-            }}>
+            <table className="sector-list-table">
                 <thead>
                     <tr className="indicator-row">
                         <ListHeader
                             config={config}
                             sectorCount={sectors.length}
-                            onConfigChange={conf => props.widget.fireChange(conf)}
-                            onSearch={term => setSearchTerm(term)} />
+                            onConfigChange={(conf) => props.widget.fireChange(conf)}
+                            onSearch={(term) => setSearchTerm(term)}
+                        />
 
-                        { // optional demand column
+                        {
+                            // optional demand column
                             config.showvalues
-                                ? <th><div><span>Demand</span></div></th>
+                                ? (
+                                    <th>
+                                        <div>
+                                            <span>Demand [billions]</span>
+                                        </div>
+                                    </th>
+                                )
                                 : <></>
                         }
 
                         <ImpactHeader
                             indicators={indicators}
-                            onClick={(i) => setSorter(
-                                sorter === i ? null : i
-                            )} />
+                            onClick={(i) => setSorter(sorter === i ? null : i)}
+                        />
 
                         {
                             // SectorHeader displays the corresponding sector
@@ -292,30 +277,34 @@ const Component = (props: { widget: SectorList }) => {
                         }
                         <SectorHeader widget={props.widget} />
 
-                        { // optional column with ranking values
+                        {
+                            // optional column with ranking values
                             strings.isMember("ranking", config.view)
-                                ? <th><div><span>Ranking</span></div></th>
+                                ? (
+                                    <th>
+                                        <div>
+                                            <span>Ranking</span>
+                                        </div>
+                                    </th>
+                                )
                                 : <></>
                         }
                     </tr>
                 </thead>
-                <tbody className="sector-list-body">
-                    {rows}
-                </tbody>
+                <tbody className="sector-list-body">{rows}</tbody>
             </table>
         </>
     );
 };
 
 export type RowProps = {
-    sector: Sector,
-    sortIndicator: Indicator | null,
-    widget: SectorList,
-    rank?: number,
+    sector: Sector;
+    sortIndicator: Indicator | null;
+    widget: SectorList;
+    rank?: number;
 };
 
 const Row = (props: RowProps) => {
-
     const config = props.widget.config;
     const sector = props.sector;
 
@@ -329,9 +318,7 @@ const Row = (props: RowProps) => {
 
     // the selection handler of the sector
     const onSelect = () => {
-        let codes = config.sectors
-            ? config.sectors.slice(0)
-            : null;
+        let codes = config.sectors ? config.sectors.slice(0) : null;
         if (!codes) {
             codes = [sector.code];
         } else {
@@ -349,47 +336,57 @@ const Row = (props: RowProps) => {
     // display the demand value if showvalues=true
     let demand;
     if (config.showvalues) {
-
-        // demand value
         const demandVal = props.widget.demand[sector.code];
-        demand = <td style={{
-            borderTop: "lightgray solid 1px",
-            padding: "5px 0px",
-            whiteSpace: "nowrap",
-        }}>
-            {demandVal ? demandVal.toFixed(3) : null}
-        </td>;
+        const demandStr = !demandVal
+            ? "---"
+            : demandVal < 500_000
+                ? "0.000"
+                : Currency.format(demandVal / 1_000_000_000);
+        demand = (
+            <td
+                style={{
+                    borderTop: "lightgray solid 1px",
+                    padding: "5px 0px",
+                    whiteSpace: "nowrap",
+                    textAlign: "right",
+                }}
+            >
+                {demandStr}
+            </td>
+        );
     }
 
     // display the ranking value if view=ranking
     let rank;
     if (strings.isMember("ranking", config.view)) {
-        rank = <td style={{
-            borderTop: "lightgray solid 1px",
-            padding: "5px 0px",
-            whiteSpace: "nowrap",
-        }}>
-            {props.rank ? props.rank.toFixed(3) : null}
-        </td>;
+        rank = (
+            <td
+                style={{
+                    borderTop: "lightgray solid 1px",
+                    padding: "5px 0px",
+                    whiteSpace: "nowrap",
+                }}
+            >
+                {props.rank ? props.rank.toFixed(3) : null}
+            </td>
+        );
     }
 
     const sectorLabel = `${sector.code} - ${sector.name}`;
     return (
         <tr>
-            <td key={props.sector.code}
+            <td
+                key={props.sector.code}
                 style={{
                     borderTop: "lightgray solid 1px",
                     padding: "5px 0px",
                     whiteSpace: "nowrap",
-                }}>
+                }}
+            >
                 <div style={{ cursor: "pointer" }}>
-                    <input type="checkbox"
-                        checked={selected}
-                        onChange={onSelect}>
-                    </input>
+                    <input type="checkbox" checked={selected} onChange={onSelect}></input>
 
-                    <a title={sectorLabel}
-                        onClick={onSelect}>
+                    <a title={sectorLabel} onClick={onSelect}>
                         {strings.cut(sectorLabel, 80)}
                     </a>
                 </div>

@@ -2,11 +2,12 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>Cancer & Industry Incidence</title>
+    <title>Industry Impact Analysis</title>
 
-    <meta name="description" content="A simple range plugin written in pure JavaScript" />
+    <meta name="description" content="Exploring health, wealth and environmental impacts" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" type="text/css" href="./src/national_choropleth.css">
+    <meta name="robots" content="noindex, nofollow">
 
     <!-- Call the range slider script -->
     <script src="src/range.js"></script>
@@ -16,12 +17,39 @@
     <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
     <script src="https://d3js.org/topojson.v2.min.js"></script>
 
+
+
+    <link type="text/css" rel="stylesheet" href="../../localsite/css/base.css" />
+    <link rel="stylesheet" href="../../localsite/css/search-filters.css" />
+    <link rel="stylesheet" href="../../localsite/css/map-display.css" />
+
+    <script type="text/javascript" src="../../localsite/js/showdown.min.js"></script>
+    <script type="text/javascript" src="../../localsite/js/jquery.min.js"></script>
+    <script type="text/javascript" src="../../localsite/js/localsite.js"></script>
+
+    <!-- Activate to include site navigation-->
+    <script type="text/javascript" src="../../localsite/js/navigation.js"></script>
+    <link rel="stylesheet" href="../../localsite/css/leaflet.css" />
+     <!-- Resides AFTER Leaflet's CSS -->
+    <script src="../../localsite/js/leaflet.js" id="/localsite/js/leaflet.js"></script>
+    <script src="../../localsite/js/d3.v5.min.js"></script>
+
+
 </head>
 <body>
-    <main class="main boxed">
-        
-        <h2>Exploring Cancer and Industry Hot-Spots</h2>
-        <p>Industrial activity touches nearly every facet of modern, American life. This project aims to identify localities and industries where industrial activty may contribute to elevated risk of various types of cancer</p>
+
+    <script>
+        loadMarkdown("README.md", "readmeDiv", "_parent");
+    </script>
+
+    <div class="content contentpadding" style="padding-bottom: 0px">
+        <div id="readmeDiv"></div>
+    </div>
+
+    <main class="main boxed" style="padding:0 40px">
+        <!-- Cancer & Industry Incidence -->
+        <h2>Exploring <!--Cancer and -->Industry Hot-Spots</h2>
+        <p>Industrial activity touches nearly every facet of modern, American life. This project aims to identify localities and industries where industrial activity may contribute to elevated risk of various types of cancer</p>
 
         <!-- ------------------------------------------------------------------------------------------------------ -->
         <!-- Map Data Selectors -->
@@ -168,14 +196,16 @@
 
         <!-- ------------------------------------------------------------------------------------------------------ -->
         <!-- National Scale Data -->
+
+        <!--
         <hr>
         <h2>Data Sources</h2>    
-
+        -->
 
         <!-- Call the D3 Script to build the plots -->
         <script type="text/javascript" src="./src/national_choropleth.js" charset="utf-8"></script>
 
-
+        
     </main>
 </body>
 </html>

@@ -1,10 +1,13 @@
+node_modules/
+build/
 dist/
+.vscode/
+*.pdf
 .DS_Store
 .env
 env/
 env*
+.venv
 .flaskenv
-node_modules/
 *.pyc
 *.pyo
-.vscode/
