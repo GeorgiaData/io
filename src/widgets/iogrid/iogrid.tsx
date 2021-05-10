@@ -4,15 +4,16 @@ import * as ReactDOM from "react-dom";
 import { Grid } from "@material-ui/core";
 
 import { Indicator, Matrix, Model, Sector } from "../../webapi";
-import { Config, Widget } from "../../widget";
-import { isNotNone, isNone, TMap } from "../../util/util";
-import { zeros } from "../../calc/calc";
+import { Config, Widget } from "../../";
+import { isNotNone, isNone, TMap } from "../../util";
+import { zeros } from "../../calc";
 import * as strings from "../../util/strings";
 import * as naics from "../../naics";
-import * as selection from "./selection";
 
 import { CommodityList } from "./commodity-list";
 import { FlowList } from "./flow-list";
+import * as selection from "./selection";
+
 
 /**
  * The row type of the input or output list.
@@ -42,10 +43,9 @@ export class IOGrid extends Widget {
         private model: Model,
         private selector: string) {
         super();
-        this.ready();
     }
 
-    protected async handleUpdate(config: Config) {
+    async update(config: Config) {
         if (!this.techMatrix) {
             await this.initialize();
         }
@@ -61,19 +61,22 @@ export class IOGrid extends Widget {
                     <FlowList
                         config={config}
                         widget={this}
-                        direction="input" />
+                        direction="input"
+                    />
                 </Grid>
                 <Grid item style={{ width: "40%" }}>
                     <CommodityList
                         config={config}
                         sectors={this.commoditySectors}
-                        widget={this} />
+                        widget={this}
+                    />
                 </Grid>
                 <Grid item style={{ width: "30%" }}>
                     <FlowList
                         config={config}
                         widget={this}
-                        direction="output" />
+                        direction="output"
+                    />
                 </Grid>
             </Grid>,
             document.querySelector(this.selector)

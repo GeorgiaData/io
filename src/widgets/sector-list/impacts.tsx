@@ -2,10 +2,11 @@ import * as React from "react";
 
 import { Indicator, IndicatorGroup, Model } from "../../webapi";
 import { RowProps } from "./sector-list";
-import { Config } from "../../widget";
 import * as colors from "../../util/colors";
 import * as strings from "../../util/strings";
-import * as conf from "../../config";
+import * as constants from "../../constants";
+import { isNotNone } from "../../util/util";
+import { Config } from "../../config";
 
 const INDICATOR_GROUPS = [
     IndicatorGroup.IMPACT_POTENTIAL,
@@ -32,9 +33,9 @@ export async function selectIndicators(
     }
 
     // filter indicators by configuration codes
-    let codes = config.indicators;
+    let codes = config.view_indicators;
     if (!codes || codes.length === 0) {
-        codes = conf.DEFAULT_INDICATORS;
+        codes = constants.DEFAULT_INDICATORS;
     }
     const indicators = all.filter(i => codes.indexOf(i.code) >= 0);
     if (indicators.length <= 1) {
@@ -73,7 +74,7 @@ export const ImpactHeader = (props: {
         return (
             <th className="indicator" key={indicator.code}>
                 <div>
-                    <a>{indicator.simplename || indicator.name} ({indicator.code})</a>
+                    <a>{indicator.name} ({indicator.code})</a>
                 </div>
             </th>
         );
@@ -104,7 +105,7 @@ export const ImpactHeader = (props: {
             <th key={key} className="indicator">
                 <div>
                     <a onClick={() => props.onClick(indicator)}>
-                        {indicator.simplename || indicator.name}
+                        {indicator.name} ({indicator.code})
                     </a>
                 </div>
             </th>
@@ -112,7 +113,6 @@ export const ImpactHeader = (props: {
     }
     return <>{items}</>;
 };
-// Removed ({indicator.code})
 
 /**
  * Appends possible indicator result columns to a row in the heatmap. If no
@@ -139,7 +139,7 @@ export const ImpactResult = (props: RowProps) => {
             <td key={ind.id}>
                 <div>
                     <span style={{ float: "left" }}>
-                        {`${config.showscientific ? r.toExponential(2) : r.toFixed(3)} ${ind.simpleunit}`}
+                        {`${config.showscientific ? r.toExponential(2) : r.toFixed(3)} ${ind.unit}`}
                     </span>
                     <svg height="15" width="210"
                         style={{ float: "left", clear: "both" }}>
@@ -164,16 +164,30 @@ export const ImpactResult = (props: RowProps) => {
         }
         const r = result.getResult(ind, props.sector);
         const share = result.getShare(ind, props.sector);
-        let alpha = 0.1 + 0.9 * share;
-        if (props.sortIndicator && props.sortIndicator !== ind) {
-            alpha *= 0.25;
-        }
+        const alpha = 0.1 + 0.9 * share;
+        // Extra transparency on non sorted columns
+        // if (props.sortIndicator && props.sortIndicator !== ind) {
+        //     alpha *= 0.25;
+        // }
         const color = colors.forIndicatorGroup(ind.group, alpha);
-        const value = `${config.showscientific ? r.toExponential(2) : r.toFixed(3)} ${ind.simpleunit}`;
+        const value = `${config.showscientific ? r.toExponential(2) : r.toFixed(3)} ${ind.unit}`;
+        let isIndicatorSelected = "";
+        // We box the sorted column
+        if (isNotNone(props.sortIndicator) && props.sortIndicator.includes(ind)) {
+            isIndicatorSelected = "sector-list-table_sorted-cell-side";
+            if (props.index === 0) {
+                isIndicatorSelected += " sector-list-table_sorted-cell-top";
+            } else if (props.index === config.count - 1) {
+                isIndicatorSelected += " sector-list-table_sorted-cell-bottom";
+            }
+        }
         items.push(
-            <td className="indicator-value" key={ind.id}
+            <td
+                className={`indicator-value ${isIndicatorSelected}`}
+                key={ind.id}
                 title={value}
-                style={{ backgroundColor: color }}>
+                style={{ backgroundColor: color }}
+            >
                 {config.showvalues ? value : ""}
             </td>
         );

@@ -1,1 +1,1 @@
-[{"id":"2012_us_domestic_consumption","year":2012,"type":"consumption","system":"complete","location":"US"},{"id":"2012_us_domestic_production","year":2012,"type":"production","system":"complete","location":"US"}]
+[{"id":"2012_us_consumption_complete","year":2012,"type":"Consumption","system":"Complete","location":"US"},{"id":"2012_us_production_complete","year":2012,"type":"Production","system":"Complete","location":"US"},{"id":"2012_us_consumption_household","year":2012,"type":"Consumption","system":"Household","location":"US"}]

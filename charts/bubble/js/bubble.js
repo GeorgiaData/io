@@ -1,9 +1,25 @@
 /*
-  Source: https://bl.ocks.org/luluwuluying/ace3699c70a2e3e7a2bb
-  To do: Multicolumn sort (but allow for fixed first column)
-  https://rawgit.com/joequery/Stupid-Table-Plugin/master/examples/multicolumn-sort.html
+  Impact Bubble Chart
 */
 
+var iBubble = iBubble || (function(){
+    var _args = {}; // private
+
+    return {
+        init : function(Args) {
+            _args = Args;
+            // some other initialising
+        },
+        helloWorld : function() {
+            alert('Hello World! -' + _args[0]);
+        },
+        priorHash : function() {
+          return ({}); // initially empty
+            //return (getHash()); // Includes hiddenhash. Resides in localsite/localsite.js
+        },
+
+    };
+}());
 
 // `hashChangeEvent` event reside in multiple widgets. 
 // Called by goHash +-++localsite.js
@@ -47,6 +63,7 @@ d3.selectAll("#county").on("change",function(){
 
 par={}
 //attribute mutation observer instead of using hash
+/*
 var observer = new MutationObserver(function(mutations) {
   mutations.forEach(function(mutation) {
     if (mutation.type == "attributes") {
@@ -62,26 +79,33 @@ var observer = new MutationObserver(function(mutations) {
     }
   });
 });
+*/
 
-observer.observe(element, {
-  attributes: true //configure it to listen to attribute changes
-});
+// Uncaught TypeError: Failed to execute 'observe' on 'MutationObserver': parameter 1 is not of type 'Node'.
+//observer.observe(element, {
+//  attributes: true //configure it to listen to attribute changes
+//});
 
 
-document.addEventListener('hashChangeEvent', function (elem) {  
-  console.log("bubble chart detects hash changed")
-  params = loadParams(location.search,location.hash);
-  params = mix(params,param); // Gives priority to params, param includes include path value and page settings.
-  if(params.x){dropdown.val(params.x)}
-  if(params.y){dropdown2.val(params.y)}
-  if(params.z){dropdown3.val(params.z)}
-  
-  //readyfunc();
-  if(counter==2){
-    counter=0
-  }
-  if(counter==0){  
-    geo_list[0]=params.geo
+let priorHash_bubble = {};
+//refreshBubbleWidget();
+
+document.addEventListener('hashChangeEvent', function (elem) {
+  refreshBubbleWidget();
+}, false);
+
+
+function refreshBubbleWidget() {
+
+    let hash = getHash(); // Includes hiddenhash
+    params = loadParams(location.search,location.hash); // Also used by loadIndustryData()
+
+    //alert("refreshBubbleWidget() naics: " + hash.naics);
+
+    /*
+    // GET US
+
+        geo_list[0]=params.geo
     if(geo_list[1]){
       lastgeo=geo_list[1]
       currgeo=geo_list[0]
@@ -113,49 +137,28 @@ document.addEventListener('hashChangeEvent', function (elem) {
         }
       }
     }
-  }else{
-    geo_list[1]=params.geo
-    lastgeo=geo_list[0]
-    currgeo=geo_list[1]
-    if(typeof lastgeo!='undefined'){
-      if (lastgeo.includes(",")){
-        lastgeo=lastgeo.split(",")
-        lastgeo=(lastgeo[0].split("US")[1]).slice(0,2)
-      }else{
-        lastgeo=(lastgeo.split("US")[1]).slice(0,2)
-      }
+    */
+
+    
+  
+    if (priorHash_bubble.state != hash.state) {
+        displayImpactBubbles(); // Occurs on INIT
+    } else if (priorHash_bubble.geo != hash.geo) {
+        displayImpactBubbles();
+    } else if (priorHash_bubble.naics != hash.naics) {
+        displayImpactBubbles();
+    } else if (priorHash_bubble.x != hash.x || priorHash_bubble.y != hash.y || priorHash_bubble.z != hash.z) {
+        displayImpactBubbles();
     }
-    if(typeof currgeo!='undefined'){
-      if (currgeo.includes(",")){
-        currgeo=currgeo.split(",")
-        currgeo=(currgeo[0].split("US")[1]).slice(0,2)
-      }else{
-        currgeo=(currgeo.split("US")[1]).slice(0,2)
-      }
-    }
-  }
+    priorHash_bubble = getHash();
+}
 
-  if(lastgeo!=currgeo){
-    readyfunc();
-  }
-  counter=counter+1
-
-
-  //the toggle button to show GA or US
-  if(document.getElementById("mySelect").checked){
-    midFunc(params.x,params.y,params.z,params,"region");
-    document.querySelector('#sector-list').setAttribute('area', 'GAUSEEIO');
-  }else{
-    midFunc(params.x,params.y,params.z,params,"all");
-    document.querySelector('#sector-list').setAttribute('area', 'USEEIO');
-  }
-}, false);
 
 
 //getting the listof indicators and populating the x and y dropdown options
 let dropdown = $('#graph-picklist-x');
 dropdown.empty();
-const url = '/io/build/api/GAUSEEIO/indicators.json';
+const url = '/io/build/api/USEEIOv2.0/indicators.json';
 // Populate dropdown with list of provinces
 $.getJSON(url, function (data) {
   $.each(data, function (key, entry) {
@@ -298,6 +301,7 @@ var div = d3.select(parentId).append("div")
 
 
 function getDimensions(x,y,z){
+
   var returnX=[];
   var returnY=[];
   var returnZ=[];
@@ -308,7 +312,7 @@ function getDimensions(x,y,z){
       ENRG:d["ENRG"],ETOX:d["ETOX"],EUTR:d["EUTR"],FOOD:d["FOOD"],GCC:d["GCC"],HAPS:d["HAPS"],
       HAZW:d["HAZW"],HC:d["HC"],HNC:d["HNC"],HRSP:d["HRSP"],HTOX:d["HTOX"],JOBS:d["JOBS"],
       LAND:d["LAND"],METL:d["METL"],MINE:d["MINE"],MSW:d["MSW"],NREN:d["NREN"],OZON:d["OZON"],
-      PEST:d["PEST"],REN:d["REN"],SMOG:d["SMOG"],VADD:d["VADD"],WATR:d["WATR"]}; // CUSTOM, appended year for chart, the rest for popup
+      PEST:d["PEST"],REN:d["REN"],SMOG:d["SMOG"],VADD:d["VADD"],WATR:d["WATR"],GHG:d["GHG"]}; // CUSTOM, appended year for chart, the rest for popup
       returnPairs.push(pair);
       returnX.push(d[x]);
       returnY.push(d[y]);
@@ -320,12 +324,13 @@ function getDimensions(x,y,z){
   }
 }
 
-function updateTitle(x,y,z){
-  return; // To prevent error
+function updateTitle(x,y,z) {
+  return; // Not currently adding extra title
+
   var unitx, unity, unitz;
   console.log("updateTitle " + x + " " + y + " " + z);
   let params = loadParams(location.search,location.hash);
-  d3.json("/io/build/api/GAUSEEIO/indicators.json").then(function(consdata){
+  d3.json("/io/build/api/USEEIOv2.0/indicators.json").then(function(consdata){
     console.log("attempt");
     var filteredData = consdata.filter(function(d) {
       if(d["id"]==x) {
@@ -400,13 +405,36 @@ function calculateLineData(leastSquares,xRange,iterations){
 }
 
 
-var allData
-$( document ).ready(readyfunc());
-let geo_list={}
-counter=0
-function readyfunc(){
+//$(document).on("click", "#mySelect", function(event) {
+document.getElementById("mySelect").onchange = function() {
+  $("#mySelect").toggle(this.checked);
+  myFunction();
+}
+function myFunction() {
+  if(document.getElementById("mySelect").checked){
+    console.log("mySelect checked");
+    // Show for region
+    midFunc(d3.select("#graph-picklist-x").node().value,d3.select("#graph-picklist-y").node().value,d3.select("#graph-picklist-z").node().value, params,"region")
+    //document.querySelector('#sector-list').setAttribute('area', 'GAUSEEIO');
+  }else{
+    console.log("mySelect unchecked");
+    // Show for all
+    midFunc(d3.select("#graph-picklist-x").node().value,d3.select("#graph-picklist-y").node().value,d3.select("#graph-picklist-z").node().value, params,"all")
+    //document.querySelector('#sector-list').setAttribute('area', 'USEEIO');
+  }
+}
+
+
+var allData;
+let geo_list={};
+counter=0;
+
+function displayImpactBubbles() {
+  console.log("displayImpactBubbles");
+
   dataObject1.stateshown=13;
   let params = loadParams(location.search,location.hash);
+
   if(params["geo"]){
     geo=params["geo"]
     if (geo.includes(",")){
@@ -422,10 +450,14 @@ function readyfunc(){
     model=''
   }
   var community_data_root = "https://model.earth";
+
+  // Probably needs to be regenerated for USSEEIOv2.0
+  // https://github.com/modelearth/community-data/tree/master/us/indicators
+
   d3.csv(community_data_root + "/community-data/us/indicators/indicators_sectors"+model+".csv").then(function(data){
     data.forEach(function(d) {
-      d.ACID = +d.ACID;
-      d.ENRG= +d.ENRG;
+      d.ACID=+d.ACID
+      d.ENRG=+d.ENRG
       d.ETOX=+d.ETOX
       d.EUTR=+d.EUTR
       d.FOOD=+d.FOOD
@@ -448,6 +480,7 @@ function readyfunc(){
       d.SMOG=+d.SMOG
       d.VADD=+d.VADD
       d.WATR=+d.WATR
+      d.GHG=+d.GHG
     });
 
     allData = data;
@@ -461,39 +494,31 @@ function readyfunc(){
     } else { // Same as below
       $("#graph-picklist-x").val('ENRG');
       $("#graph-picklist-y").val('WATR');
-      $("#graph-picklist-z").val('LAND');
+      $("#graph-picklist-z").val('JOBS');
     }
-    document.getElementById("mySelect").onchange = function() {myFunction()};
-    function myFunction() {
-      if(document.getElementById("mySelect").checked){
-        midFunc(d3.select("#graph-picklist-x").node().value,
-        d3.select("#graph-picklist-y").node().value,
-        d3.select("#graph-picklist-z").node().value,
-        params,"region")
-        document.querySelector('#sector-list').setAttribute('area', 'GAUSEEIO');
-      }else{
-        midFunc(d3.select("#graph-picklist-x").node().value,
-        d3.select("#graph-picklist-y").node().value,
-        d3.select("#graph-picklist-z").node().value,
-        params,"all")
-        document.querySelector('#sector-list').setAttribute('area', 'USEEIO');
-      }
-    }
+
+
+
+    // Initial load
+    // To do: invoke the following when something like param load=true reside in embed
+    
     if(document.getElementById("mySelect").checked){
       midFunc(d3.select("#graph-picklist-x").node().value,
       d3.select("#graph-picklist-y").node().value,
       d3.select("#graph-picklist-z").node().value,
       params,"region");
-      document.querySelector('#sector-list').setAttribute('area', 'GAUSEEIO');
+      //document.querySelector('#sector-list').setAttribute('area', 'GAUSEEIO');
     }else{
       midFunc(d3.select("#graph-picklist-x").node().value,
       d3.select("#graph-picklist-y").node().value,
       d3.select("#graph-picklist-z").node().value,
       params,"all");
-      document.querySelector('#sector-list').setAttribute('area', 'USEEIO');
+      //document.querySelector('#sector-list').setAttribute('area', 'USEEIO');
     }
-      
+    
+
     d3.selectAll(".graph-picklist").on("change",function(){
+      // Update hash and trigger hashChange event. Resides in localsite.js
       goHash({"x":$("#graph-picklist-x").val(),"y":$("#graph-picklist-y").val(),"z":$("#graph-picklist-z").val()});
       //updateChart(d3.select("#graph-picklist-x").node().value,
       ///  d3.select("#graph-picklist-y").node().value,
@@ -511,37 +536,48 @@ var ordinal = d3.scaleOrdinal() // Becomes scaleOrdinal in v4
 
 
 function midFunc(x,y,z,params,boundry){
-  if(params.naics){
-    console.log("params.naics " + params.naics)
-    naicsList=params.naics.split(",")
-    useeioList=[]
-    useeiodetail=[]
-    // TO DO: Add a path root here
-    d3.csv("/io/charts/bubble/data/Crosswalk_MasterCrosswalk.csv").then( function(consdata) {
-      var filteredData = consdata.filter(function(d) {
-        for(i=0;i<naicsList.length;i++){
-          if(d["2012_NAICS_Code"]==naicsList[i]) {
-              useeioList.push(d["USEEIO1_Code"])
-              useeiodetail.push(d["USEEIO1_Commodity"])
+
+  let hash = getHash(); // includes hiddenhash
+
+  console.log("bubble.js midFunc naics: " + hash.naics);
+
+  //alert("hash.x " + hash.x + " midFunc hiddenhash.naics in bubble.js: " + hiddenhash.naics);
+  //alert("iBubble.priorHash.x " + iBubble.priorHash.x);
+
+  // BUG - This prevented toggle - Moved to hashchange above
+  //if (hash.naics != iBubble.priorHash.naics || hash.x != iBubble.priorHash.x || hash.y != iBubble.priorHash.y || hash.z != iBubble.priorHash.z) {
+    console.log("midFunc hash.naics change in bubble.js from getHash(): " + hash.naics);
+    if (hash.naics) {
+      naicsList = hash.naics.split(",");
+      useeioList = [];
+      useeiodetail = [];
+      // TO DO: Add a path root here
+      d3.csv("/io/charts/bubble/data/Crosswalk_MasterCrosswalk.csv").then( function(consdata) {
+        var filteredData = consdata.filter(function(d) {
+          for(i=0;i<naicsList.length;i++){
+            if(d["2012_NAICS_Code"]==naicsList[i]) {
+                useeioList.push(d["USEEIO1_Code"])
+                useeiodetail.push(d["USEEIO1_Commodity"])
+            }
           }
-        }
+        })
+        updateChart(x,y,z,useeioList,boundry);
       })
-      updateChart(x,y,z,useeioList,boundry)
-    })
-  }else{updateChart(x,y,z,[],boundry)}
+    } else {
+      updateChart(x,y,z,[],boundry);
+    }
+  //}
+  iBubble.priorHash = jQuery.extend(true, {}, hash); // Make a detached copy of hadh object
 }
 
 function updateChart(x,y,z,useeioList,boundry){
-  if(typeof countload=='undefined'){
-    countload=0
-    countload+=1
-    updateChart(x,y,z,useeioList,boundry)
-  }
   if (!(x && y && z)) { // Same as above
     x = 'ENRG';
     y = 'WATR';
-    z = 'LAND';
+    z = 'JOBS';
   }
+
+  //alert("updateChart " + x + " hiddenhash.naics in bubble.js: " + hiddenhash.naics);
 
   //Fetch data
   var records = getDimensions(x,y,z);
@@ -573,6 +609,7 @@ function updateChart(x,y,z,useeioList,boundry){
   xScale.domain(d3.extent(records.x));
   zScale.domain(d3.extent(records.z));
   //re-assign data (or assign new data)
+
   var selectedCircles = d3.select("#graph-plane")
     .selectAll(".circles")
     .data(records.pairs)
@@ -593,19 +630,22 @@ function updateChart(x,y,z,useeioList,boundry){
             if (useeioList1.includes( d.industry_code) ) {
               return "url(#gradient)";
             } else {
-              return "#303030";
+              return "#aaa";
             }
-          }else{return colors[d3.select(this).attr("class").split("circles selected")[1]]}
-        }else{
+          } else { return colors[d3.select(this).attr("class").split("circles selected")[1]]}
+        } else {
           if(d3.select(this).attr("class")=="circles" || d3.select(this).attr("class")==null){
-              return "#303030";
-          }else{return colors[d3.select(this).attr("class").split("circles selected")[1]]}
+              //return "#303030";
+              return "#aaa";
+          } else { return colors[d3.select(this).attr("class").split("circles selected")[1]]}
         }
-      }else{
+      } else {
         if(d3.select(this).attr("class")=="circles" || d3.select(this).attr("class")==null){
-          return "url(#gradient)";
+          //return "url(#gradient)";
+          return "#ccc";
         }else{
-          return colors[d3.select(this).attr("class").split("circles selected")[1]]
+          //return colors[d3.select(this).attr("class").split("circles selected")[1]]
+          return "#ccc";
         }
       }
     })
@@ -631,6 +671,9 @@ function updateChart(x,y,z,useeioList,boundry){
     })
     
     //Append any new elements and transition them as well
+    //alert("load")
+
+    // BUGBUG - load occurs initially, but none of the following until the second time called.
     selectedCircles.enter()
       .append("circle")
       .style('fill', function (d) { 
@@ -682,6 +725,7 @@ function updateChart(x,y,z,useeioList,boundry){
       })
 
       .on("mouseover", function(d) {
+        //alert("mouse")
         if(d3.select(this).attr("class")=="circles" || d3.select(this).attr("class")==null){
           d3.select(this)
           .transition()
@@ -699,6 +743,7 @@ function updateChart(x,y,z,useeioList,boundry){
 
 
       .on("click", function(d,i) {
+        //alert("click")
         clickCount+=1;
         //d3.selectAll(".circles").classed("selected", false);
         d3.selectAll(".circles").style('fill', function (d) { 
@@ -771,7 +816,7 @@ function updateChart(x,y,z,useeioList,boundry){
         sect_list.push(d.industry_code.toUpperCase())
         console.log("sects"+sect_list)
         console.log(typeof sect_list[0])
-        document.querySelector('#sector-list').setAttribute('sector', sect_list);
+        //document.querySelector('#sector-list').setAttribute('sector', sect_list);
       })
 
       .on("mouseout", function(d) {
@@ -908,7 +953,7 @@ function clearBubbleSelection(){
     //document.getElementById("impactText").innerHTML ="";
     selected_sector=[]
     sect_list=[]
-    document.querySelector('#sector-list').setAttribute('sector', sect_list);
+    //document.querySelector('#sector-list').setAttribute('sector', sect_list);
     d3.select("#selected_bar").remove();
     $("#impactText").html("");
     $("#impactTextIntro").show();
@@ -937,3 +982,14 @@ function clearBubbleSelection(){
         sectors: [selected_sector],      
       });
 }
+
+// INIT
+/*
+if (hiddenhash.naics) { // Set in naics.js
+    console.log("bubble chart init. hiddenhash.naics value: " + hiddenhash.naics);
+    $(document).ready(function(){
+      alert("hiddenhash.naics " + hiddenhash.naics)
+       displayImpactBubbles(); // Resides in bubble.js
+    });
+}
+*/

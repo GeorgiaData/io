@@ -1,0 +1,23 @@
+[
+    {
+        "id": "2012_us_consumption_complete",
+        "year": 2012,
+        "type": "Consumption",
+        "system": "Complete",
+        "location": "US"
+    },
+    {
+        "id": "2012_us_production_complete",
+        "year": 2012,
+        "type": "Production",
+        "system": "Complete",
+        "location": "US"
+    },
+    {
+        "id": "2012_us_consumption_household",
+        "year": 2012,
+        "type": "Consumption",
+        "system": "Household",
+        "location": "US"
+    }
+]

@@ -1,0 +1,1646 @@
+[
+  {
+    "sector": "1111a0/fresh soybeans, canola, flaxseeds, and other oilseeds/us",
+    "amount": 0
+  },
+  {
+    "sector": "1111b0/fresh wheat, corn, rice, and other grains/us",
+    "amount": 2183000000
+  },
+  {
+    "sector": "111200/fresh vegetables, melons, and potatoes/us",
+    "amount": 17374000000
+  },
+  {
+    "sector": "111300/fresh fruits and tree nuts/us",
+    "amount": 19496000000
+  },
+  {
+    "sector": "111400/greenhouse crops, mushrooms, nurseries, and flowers/us",
+    "amount": 9953000000
+  },
+  {
+    "sector": "111900/tobacco, cotton, sugarcane, peanuts, sugar beets, herbs and spices, and other crops/us",
+    "amount": 3395000000
+  },
+  {
+    "sector": "112120/dairies/us",
+    "amount": 130000000
+  },
+  {
+    "sector": "1121a0/cattle ranches and feedlots/us",
+    "amount": 77000000
+  },
+  {
+    "sector": "112300/poultry farms/us",
+    "amount": 4952000000
+  },
+  {
+    "sector": "112a00/animal farms and aquaculture ponds (except cattle and poultry)/us",
+    "amount": 7918000000
+  },
+  {
+    "sector": "113000/timber and raw forest products/us",
+    "amount": 0
+  },
+  {
+    "sector": "114000/wild-caught fish and game/us",
+    "amount": 5542000000
+  },
+  {
+    "sector": "115000/agriculture and forestry support/us",
+    "amount": 273000000
+  },
+  {
+    "sector": "211000/unrefined oil and gas/us",
+    "amount": 0
+  },
+  {
+    "sector": "212100/coal/us",
+    "amount": 72000000
+  },
+  {
+    "sector": "212230/copper, nickel, lead, and zinc/us",
+    "amount": 0
+  },
+  {
+    "sector": "2122a0/iron, gold, silver, and other metal ores/us",
+    "amount": 264000000
+  },
+  {
+    "sector": "212310/dimensional stone/us",
+    "amount": 0
+  },
+  {
+    "sector": "2123a0/sand, gravel, clay, phosphate, other nonmetallic minerals/us",
+    "amount": 64000000
+  },
+  {
+    "sector": "213111/well drilling/us",
+    "amount": 47549000000
+  },
+  {
+    "sector": "21311a/other support activities for mining/us",
+    "amount": 109138000000
+  },
+  {
+    "sector": "221100/electricity/us",
+    "amount": 163246000000
+  },
+  {
+    "sector": "221200/natural gas/us",
+    "amount": 44314000000
+  },
+  {
+    "sector": "221300/drinking water and wastewater treatment/us",
+    "amount": 34832000000
+  },
+  {
+    "sector": "230301/nonresidential maintenance and repair/us",
+    "amount": 0
+  },
+  {
+    "sector": "230302/residential maintenance and repair/us",
+    "amount": 0
+  },
+  {
+    "sector": "233210/health care structures/us",
+    "amount": 46153000000
+  },
+  {
+    "sector": "233230/manufacturing structures/us",
+    "amount": 48817000000
+  },
+  {
+    "sector": "233240/power and communication structures/us",
+    "amount": 113571000000
+  },
+  {
+    "sector": "233262/educational and vocational structures/us",
+    "amount": 81565000000
+  },
+  {
+    "sector": "2332a0/commercial structures, including farm structures/us",
+    "amount": 80889000000
+  },
+  {
+    "sector": "2332c0/transportation structures and highways and streets/us",
+    "amount": 122037000000
+  },
+  {
+    "sector": "2332d0/other nonresidential structures/us",
+    "amount": 93707000000
+  },
+  {
+    "sector": "233411/single-family residential structures/us",
+    "amount": 132995000000
+  },
+  {
+    "sector": "233412/multifamily residential structures/us",
+    "amount": 27740000000
+  },
+  {
+    "sector": "2334a0/other residential structures/us",
+    "amount": 163963000000
+  },
+  {
+    "sector": "311111/dog and cat food/us",
+    "amount": 15110000000
+  },
+  {
+    "sector": "311119/other animal food/us",
+    "amount": 2374000000
+  },
+  {
+    "sector": "311210/flours and malts/us",
+    "amount": 4319000000
+  },
+  {
+    "sector": "311221/corn products/us",
+    "amount": 742000000
+  },
+  {
+    "sector": "311224/soybean and other oilseed processing/us",
+    "amount": 1512000000
+  },
+  {
+    "sector": "311225/refined vegetable, olive, and seed oils/us",
+    "amount": 5445000000
+  },
+  {
+    "sector": "311230/breakfast cereals/us",
+    "amount": 9142000000
+  },
+  {
+    "sector": "311300/sugar, candy, and chocolate/us",
+    "amount": 22885000000
+  },
+  {
+    "sector": "311410/frozen food/us",
+    "amount": 24738000000
+  },
+  {
+    "sector": "311420/fruit and vegetable preservation/us",
+    "amount": 26405000000
+  },
+  {
+    "sector": "311513/cheese/us",
+    "amount": 14265000000
+  },
+  {
+    "sector": "311514/dry, condensed, and evaporated dairy/us",
+    "amount": 8290000000
+  },
+  {
+    "sector": "31151a/fluid milk and butter/us",
+    "amount": 23706000000
+  },
+  {
+    "sector": "311520/ice cream and frozen desserts/us",
+    "amount": 2020000000
+  },
+  {
+    "sector": "311615/packaged poultry/us",
+    "amount": 33414000000
+  },
+  {
+    "sector": "31161a/packaged meat (except poultry)/us",
+    "amount": 67864000000
+  },
+  {
+    "sector": "311700/seafood/us",
+    "amount": 5597000000
+  },
+  {
+    "sector": "311810/bread and other baked goods/us",
+    "amount": 42122000000
+  },
+  {
+    "sector": "3118a0/cookies, crackers, pastas, and tortillas/us",
+    "amount": 23664000000
+  },
+  {
+    "sector": "311910/snack foods/us",
+    "amount": 26169000000
+  },
+  {
+    "sector": "311920/coffee and tea/us",
+    "amount": 6744000000
+  },
+  {
+    "sector": "311930/flavored drink concentrates/us",
+    "amount": 289000000
+  },
+  {
+    "sector": "311940/seasonings and dressings/us",
+    "amount": 11382000000
+  },
+  {
+    "sector": "311990/all other foods/us",
+    "amount": 19658000000
+  },
+  {
+    "sector": "312110/soft drinks, bottled water, and ice/us",
+    "amount": 41042000000
+  },
+  {
+    "sector": "312120/breweries and beer/us",
+    "amount": 26577000000
+  },
+  {
+    "sector": "312130/wineries and wine/us",
+    "amount": 16041000000
+  },
+  {
+    "sector": "312140/distilleries and spirits/us",
+    "amount": 12127000000
+  },
+  {
+    "sector": "312200/tobacco products/us",
+    "amount": 53436000000
+  },
+  {
+    "sector": "313100/fiber, yarn, and thread/us",
+    "amount": 108000000
+  },
+  {
+    "sector": "313200/fabric/us",
+    "amount": 1248000000
+  },
+  {
+    "sector": "313300/finished and coated fabric/us",
+    "amount": 342000000
+  },
+  {
+    "sector": "314110/carpets and rugs/us",
+    "amount": 7268000000
+  },
+  {
+    "sector": "314120/curtains and linens/us",
+    "amount": 8202000000
+  },
+  {
+    "sector": "314900/other textiles/us",
+    "amount": 3906000000
+  },
+  {
+    "sector": "315000/clothing/us",
+    "amount": 98037000000
+  },
+  {
+    "sector": "316000/leather/us",
+    "amount": 41018000000
+  },
+  {
+    "sector": "321100/lumber and treated lumber/us",
+    "amount": 0
+  },
+  {
+    "sector": "321200/plywood and veneer/us",
+    "amount": 0
+  },
+  {
+    "sector": "321910/wooden windows, door, and flooring/us",
+    "amount": 0
+  },
+  {
+    "sector": "3219a0/veneer, plywood, and engineered wood/us",
+    "amount": 7323000000
+  },
+  {
+    "sector": "322110/wood pulp/us",
+    "amount": 0
+  },
+  {
+    "sector": "322120/paper/us",
+    "amount": 12082000000
+  },
+  {
+    "sector": "322130/cardboard/us",
+    "amount": 0
+  },
+  {
+    "sector": "322210/cardboard containers/us",
+    "amount": 835000000
+  },
+  {
+    "sector": "322220/paper bags and coated paper/us",
+    "amount": 1868000000
+  },
+  {
+    "sector": "322230/stationery/us",
+    "amount": 640000000
+  },
+  {
+    "sector": "322291/sanitary paper (tissues, napkins, diapers, etc.)/us",
+    "amount": 5817000000
+  },
+  {
+    "sector": "322299/all other converted paper products/us",
+    "amount": 844000000
+  },
+  {
+    "sector": "323110/books, newspapers, magazines, and other print media/us",
+    "amount": 5340000000
+  },
+  {
+    "sector": "323120/printing support/us",
+    "amount": 0
+  },
+  {
+    "sector": "324110/gasoline, fuels, and by-products of petroleum refining/us",
+    "amount": 279662000000
+  },
+  {
+    "sector": "324121/asphalt pavement/us",
+    "amount": 0
+  },
+  {
+    "sector": "324122/asphalt shingles/us",
+    "amount": 0
+  },
+  {
+    "sector": "324190/other petroleum and coal products/us",
+    "amount": 7386000000
+  },
+  {
+    "sector": "325110/petrochemicals/us",
+    "amount": 0
+  },
+  {
+    "sector": "325120/compressed gases/us",
+    "amount": 40000000
+  },
+  {
+    "sector": "325130/synthetic dyes and pigments/us",
+    "amount": 0
+  },
+  {
+    "sector": "325180/other basic inorganic chemicals/us",
+    "amount": 3202000000
+  },
+  {
+    "sector": "325190/other basic organic chemicals/us",
+    "amount": 946000000
+  },
+  {
+    "sector": "325211/plastics/us",
+    "amount": 0
+  },
+  {
+    "sector": "3252a0/synthetic rubber and artificial and synthetic fibers/us",
+    "amount": 0
+  },
+  {
+    "sector": "325310/fertilizers/us",
+    "amount": 373000000
+  },
+  {
+    "sector": "325320/pesticides/us",
+    "amount": 1994000000
+  },
+  {
+    "sector": "325411/medicinal and botanical ingredients/us",
+    "amount": 0
+  },
+  {
+    "sector": "325412/pharmaceutical products (pills, powders, solutions, etc.)/us",
+    "amount": 171153000000
+  },
+  {
+    "sector": "325413/blood sugar, pregnancy, and other diagnostic test kits/us",
+    "amount": 0
+  },
+  {
+    "sector": "325414/vaccines and other biological medical products/us",
+    "amount": 0
+  },
+  {
+    "sector": "325510/paints and coatings/us",
+    "amount": 1545000000
+  },
+  {
+    "sector": "325520/adhesives/us",
+    "amount": 1103000000
+  },
+  {
+    "sector": "325610/soap and cleaning compounds/us",
+    "amount": 19969000000
+  },
+  {
+    "sector": "325620/toiletries/us",
+    "amount": 28683000000
+  },
+  {
+    "sector": "325910/ink and ink cartridges/us",
+    "amount": 0
+  },
+  {
+    "sector": "3259a0/chemicals (except basic chemicals, agrichemicals, polymers, paints, pharmaceuticals,soaps, cleaning compounds)/us",
+    "amount": 1830000000
+  },
+  {
+    "sector": "326110/plastic bags, films, and sheets/us",
+    "amount": 2770000000
+  },
+  {
+    "sector": "326120/plastic pipe, fittings, and sausage casings/us",
+    "amount": 0
+  },
+  {
+    "sector": "326130/laminated plastic plates and shapes/us",
+    "amount": 0
+  },
+  {
+    "sector": "326140/polystyrene foam products/us",
+    "amount": 545000000
+  },
+  {
+    "sector": "326150/urethane and other foam products/us",
+    "amount": 573000000
+  },
+  {
+    "sector": "326160/plastic bottles/us",
+    "amount": 0
+  },
+  {
+    "sector": "326190/other plastic products/us",
+    "amount": 11489000000
+  },
+  {
+    "sector": "326210/rubber tires/us",
+    "amount": 13174000000
+  },
+  {
+    "sector": "326220/rubber and plastic belts and hoses/us",
+    "amount": 436000000
+  },
+  {
+    "sector": "326290/other rubber products/us",
+    "amount": 1337000000
+  },
+  {
+    "sector": "327100/clay and ceramic products/us",
+    "amount": 1964000000
+  },
+  {
+    "sector": "327200/glass and glass products/us",
+    "amount": 2844000000
+  },
+  {
+    "sector": "327310/cement/us",
+    "amount": 0
+  },
+  {
+    "sector": "327320/ready-mix concrete/us",
+    "amount": 0
+  },
+  {
+    "sector": "327330/concrete pipe, bricks, and blocks/us",
+    "amount": 0
+  },
+  {
+    "sector": "327390/other concrete products/us",
+    "amount": 22000000
+  },
+  {
+    "sector": "327400/lime and gypsum products/us",
+    "amount": 14000000
+  },
+  {
+    "sector": "327910/abrasive products/us",
+    "amount": 177000000
+  },
+  {
+    "sector": "327991/cut stone and stone products/us",
+    "amount": 2847000000
+  },
+  {
+    "sector": "327992/ground or treated minerals and earth/us",
+    "amount": 240000000
+  },
+  {
+    "sector": "327993/mineral wool/us",
+    "amount": 0
+  },
+  {
+    "sector": "327999/other nonmetallic mineral products/us",
+    "amount": 0
+  },
+  {
+    "sector": "331110/primary iron, steel, and ferroalloy products/us",
+    "amount": 0
+  },
+  {
+    "sector": "331200/secondary steel products/us",
+    "amount": 386000000
+  },
+  {
+    "sector": "331313/alumina refining and primary aluminum production/us",
+    "amount": 0
+  },
+  {
+    "sector": "33131b/aluminum products/us",
+    "amount": 0
+  },
+  {
+    "sector": "331410/nonferrous metal (except aluminum) smelting and refining/us",
+    "amount": 0
+  },
+  {
+    "sector": "331420/secondary copper products/us",
+    "amount": 0
+  },
+  {
+    "sector": "331490/other secondary nonferrous metal products/us",
+    "amount": 26000000
+  },
+  {
+    "sector": "331510/cast iron and steel/us",
+    "amount": 0
+  },
+  {
+    "sector": "331520/nonferrous metal casts/us",
+    "amount": 35000000
+  },
+  {
+    "sector": "332114/custom metal rolls/us",
+    "amount": 0
+  },
+  {
+    "sector": "332119/metal crown, closure, and other metal stamping (except automotive)/us",
+    "amount": 479000000
+  },
+  {
+    "sector": "33211a/all other forging, stamping, and sintering/us",
+    "amount": 0
+  },
+  {
+    "sector": "332200/cutlery and handtools/us",
+    "amount": 5922000000
+  },
+  {
+    "sector": "332310/metal structural products/us",
+    "amount": 337000000
+  },
+  {
+    "sector": "332320/metal windows, doors, and architectural products/us",
+    "amount": 358000000
+  },
+  {
+    "sector": "332410/power boilers and heat exchangers/us",
+    "amount": 3371000000
+  },
+  {
+    "sector": "332420/heavy gauge metal tanks/us",
+    "amount": 4195000000
+  },
+  {
+    "sector": "332430/light gauge metal cans, boxes, and containers/us",
+    "amount": 413000000
+  },
+  {
+    "sector": "332500/metal hinges, keys, lock, and other hardware/us",
+    "amount": 820000000
+  },
+  {
+    "sector": "332600/springs and wires/us",
+    "amount": 83000000
+  },
+  {
+    "sector": "332710/machine shops/us",
+    "amount": 909000000
+  },
+  {
+    "sector": "332720/screws, nuts, and bolts/us",
+    "amount": 235000000
+  },
+  {
+    "sector": "332800/metal coatings, engravings, and heat treatments/us",
+    "amount": 0
+  },
+  {
+    "sector": "332913/metal plumbing drains, faucets, valves, and other fittings/us",
+    "amount": 0
+  },
+  {
+    "sector": "33291a/valve and fittings (except for plumbing)/us",
+    "amount": 3143000000
+  },
+  {
+    "sector": "332991/ball and roller bearings/us",
+    "amount": 0
+  },
+  {
+    "sector": "332996/fabricated pipe and pipe fittings/us",
+    "amount": 861000000
+  },
+  {
+    "sector": "332999/other fabricated metal manufacturing/us",
+    "amount": 3012000000
+  },
+  {
+    "sector": "33299a/ammunition, arms, ordnance, and related accessories/us",
+    "amount": 7498000000
+  },
+  {
+    "sector": "333111/farm machinery and equipment/us",
+    "amount": 29538000000
+  },
+  {
+    "sector": "333112/lawn and garden equipment/us",
+    "amount": 5646000000
+  },
+  {
+    "sector": "333120/construction machinery/us",
+    "amount": 29365000000
+  },
+  {
+    "sector": "333130/mining and oil/gas field machinery/us",
+    "amount": 21119000000
+  },
+  {
+    "sector": "333242/semiconductor machinery/us",
+    "amount": 6362000000
+  },
+  {
+    "sector": "33329a/machinery for the paper, textile, food or other industries (except semiconductor machinery)/us",
+    "amount": 18476000000
+  },
+  {
+    "sector": "333314/optical instruments and lenses/us",
+    "amount": 4294000000
+  },
+  {
+    "sector": "333316/photography and photocopying equipment/us",
+    "amount": 1743000000
+  },
+  {
+    "sector": "333318/other commercial and service industry machinery/us",
+    "amount": 13852000000
+  },
+  {
+    "sector": "333413/industrial and commercial fan and blower and air purification equipment/us",
+    "amount": 2508000000
+  },
+  {
+    "sector": "333414/heating equipment other than warm air furnaces/us",
+    "amount": 1293000000
+  },
+  {
+    "sector": "333415/air conditioning, refrigeration, and warm air heating equipment/us",
+    "amount": 8565000000
+  },
+  {
+    "sector": "333511/industrial molds/us",
+    "amount": 5846000000
+  },
+  {
+    "sector": "333514/special tools, dies, jigs, and fixtures/us",
+    "amount": 7592000000
+  },
+  {
+    "sector": "333517/machine tool manufacturing/us",
+    "amount": 10482000000
+  },
+  {
+    "sector": "33351b/cutting and machine tool accessory, rolling mill, and other metalworking machines/us",
+    "amount": 2583000000
+  },
+  {
+    "sector": "333611/turbines and turbine generator sets/us",
+    "amount": 10509000000
+  },
+  {
+    "sector": "333612/speed changers, industrial high-speed drives, and gears/us",
+    "amount": 0
+  },
+  {
+    "sector": "333613/mechanical power transmission equipment/us",
+    "amount": 0
+  },
+  {
+    "sector": "333618/other engine equipment/us",
+    "amount": 3605000000
+  },
+  {
+    "sector": "333912/air and gas compressors/us",
+    "amount": 6144000000
+  },
+  {
+    "sector": "33391a/pumps and pumping equipment/us",
+    "amount": 10710000000
+  },
+  {
+    "sector": "333920/material handling equipment/us",
+    "amount": 21365000000
+  },
+  {
+    "sector": "333991/power tools/us",
+    "amount": 5293000000
+  },
+  {
+    "sector": "333993/packaging machinery/us",
+    "amount": 4558000000
+  },
+  {
+    "sector": "333994/industrial process furnaces and ovens/us",
+    "amount": 1414000000
+  },
+  {
+    "sector": "33399a/welding and soldering equipment, scales and balances, and other general purpose machinery/us",
+    "amount": 13449000000
+  },
+  {
+    "sector": "33399b/hydraulic pumps, motors, cylinders and actuators/us",
+    "amount": 546000000
+  },
+  {
+    "sector": "334111/computers/us",
+    "amount": 59244000000
+  },
+  {
+    "sector": "334112/computer storage device readers/us",
+    "amount": 12220000000
+  },
+  {
+    "sector": "334118/computer terminals and other computer peripheral equipment/us",
+    "amount": 24477000000
+  },
+  {
+    "sector": "334210/telephones/us",
+    "amount": 10674000000
+  },
+  {
+    "sector": "334220/wireless communications/us",
+    "amount": 60806000000
+  },
+  {
+    "sector": "334290/communications equipment/us",
+    "amount": 1083000000
+  },
+  {
+    "sector": "334300/audio and video equipment/us",
+    "amount": 35975000000
+  },
+  {
+    "sector": "334413/semiconductors/us",
+    "amount": 0
+  },
+  {
+    "sector": "334418/printed circuit and electronic assembly/us",
+    "amount": 199000000
+  },
+  {
+    "sector": "33441a/electronic capacitors, resistors, coils, transformers, connectors and other components (except  semiconductors and printed circuit assemblies)/us",
+    "amount": 448000000
+  },
+  {
+    "sector": "334510/electromedical appartuses/us",
+    "amount": 23427000000
+  },
+  {
+    "sector": "334511/navigation instruments/us",
+    "amount": 34257000000
+  },
+  {
+    "sector": "334512/automatic controls for hvac and refrigeration equipment/us",
+    "amount": 0
+  },
+  {
+    "sector": "334513/industrial process variable instruments/us",
+    "amount": 6881000000
+  },
+  {
+    "sector": "334514/fluid meters and counting devices/us",
+    "amount": 3036000000
+  },
+  {
+    "sector": "334515/signal testing instruments/us",
+    "amount": 6542000000
+  },
+  {
+    "sector": "334516/analytical laboratory instruments/us",
+    "amount": 9719000000
+  },
+  {
+    "sector": "334517/irradiation apparatuses/us",
+    "amount": 7822000000
+  },
+  {
+    "sector": "33451a/watches, clocks, and other measuring and controlling devices/us",
+    "amount": 10544000000
+  },
+  {
+    "sector": "334610/external hard drives, cds, other storage media/us",
+    "amount": 279000000
+  },
+  {
+    "sector": "335110/light bulbs/us",
+    "amount": 1191000000
+  },
+  {
+    "sector": "335120/light fixtures/us",
+    "amount": 3577000000
+  },
+  {
+    "sector": "335210/small electrical appliances/us",
+    "amount": 10043000000
+  },
+  {
+    "sector": "335221/home cooking appliances/us",
+    "amount": 7070000000
+  },
+  {
+    "sector": "335222/home refrigerators and freezers/us",
+    "amount": 6798000000
+  },
+  {
+    "sector": "335224/home laundry machines/us",
+    "amount": 4878000000
+  },
+  {
+    "sector": "335228/major home appliances (except ovens, stoves, refrigerators and laundry machines)/us",
+    "amount": 2113000000
+  },
+  {
+    "sector": "335311/specialty transformers/us",
+    "amount": 6110000000
+  },
+  {
+    "sector": "335312/motors and generators/us",
+    "amount": 3226000000
+  },
+  {
+    "sector": "335313/switchgear and switchboards/us",
+    "amount": 6213000000
+  },
+  {
+    "sector": "335314/relay and industrial controls/us",
+    "amount": 1837000000
+  },
+  {
+    "sector": "335911/storage batteries/us",
+    "amount": 3566000000
+  },
+  {
+    "sector": "335912/primary batteries/us",
+    "amount": 4108000000
+  },
+  {
+    "sector": "335920/communication and energy wire and cable/us",
+    "amount": 384000000
+  },
+  {
+    "sector": "335930/wiring devices/us",
+    "amount": 84000000
+  },
+  {
+    "sector": "335991/carbon and graphite products/us",
+    "amount": 0
+  },
+  {
+    "sector": "335999/other miscellaneous electrical equipment and components/us",
+    "amount": 8684000000
+  },
+  {
+    "sector": "336111/automobiles/us",
+    "amount": 122265000000
+  },
+  {
+    "sector": "336112/pickup trucks, vans, and suvs/us",
+    "amount": 209716000000
+  },
+  {
+    "sector": "336120/heavy duty trucks/us",
+    "amount": 31764000000
+  },
+  {
+    "sector": "336211/vehicle bodies/us",
+    "amount": 2456000000
+  },
+  {
+    "sector": "336212/truck trailers/us",
+    "amount": 7492000000
+  },
+  {
+    "sector": "336213/motor homes/us",
+    "amount": 1953000000
+  },
+  {
+    "sector": "336214/travel trailer and campers/us",
+    "amount": 6545000000
+  },
+  {
+    "sector": "336310/vehicle engines and engine parts/us",
+    "amount": 1493000000
+  },
+  {
+    "sector": "336320/vehicle electrical and electronic equipment/us",
+    "amount": 3048000000
+  },
+  {
+    "sector": "336350/transmission and power train parts/us",
+    "amount": 1857000000
+  },
+  {
+    "sector": "336360/vehicle seating and interior trim (upholstery)/us",
+    "amount": 1906000000
+  },
+  {
+    "sector": "336370/vehicle metal stamping/us",
+    "amount": 0
+  },
+  {
+    "sector": "336390/other vehicle parts/us",
+    "amount": 4642000000
+  },
+  {
+    "sector": "3363a0/motor vehicle steering, suspension components (except spring), and brake systems/us",
+    "amount": 1188000000
+  },
+  {
+    "sector": "336411/aircraft/us",
+    "amount": 47070000000
+  },
+  {
+    "sector": "336412/aircraft engines and parts/us",
+    "amount": 1013000000
+  },
+  {
+    "sector": "336413/other aircraft parts/us",
+    "amount": 0
+  },
+  {
+    "sector": "336414/guided missiles and space vehicles/us",
+    "amount": 13101000000
+  },
+  {
+    "sector": "33641a/propulsion units and parts for space vehicles and guided missiles/us",
+    "amount": 1149000000
+  },
+  {
+    "sector": "336500/railroad rolling stock/us",
+    "amount": 12103000000
+  },
+  {
+    "sector": "336611/ships and ship repair/us",
+    "amount": 14088000000
+  },
+  {
+    "sector": "336612/boats/us",
+    "amount": 4755000000
+  },
+  {
+    "sector": "336991/motorcycle, bicycle, and parts/us",
+    "amount": 7876000000
+  },
+  {
+    "sector": "336992/military armored vehicles and tanks/us",
+    "amount": 4063000000
+  },
+  {
+    "sector": "336999/other transportation equipment/us",
+    "amount": 5214000000
+  },
+  {
+    "sector": "337110/wood kitchen cabinets and countertops/us",
+    "amount": 604000000
+  },
+  {
+    "sector": "337121/home furniture - upholstered/us",
+    "amount": 11600000000
+  },
+  {
+    "sector": "337122/home furniture - wood, nonupholstered/us",
+    "amount": 12172000000
+  },
+  {
+    "sector": "337127/institutional furniture/us",
+    "amount": 8343000000
+  },
+  {
+    "sector": "33712n/other household nonupholstered furniture/us",
+    "amount": 5406000000
+  },
+  {
+    "sector": "337215/shelving and lockers/us",
+    "amount": 5864000000
+  },
+  {
+    "sector": "33721a/office furniture and custom architectural woodwork and millwork/us",
+    "amount": 10716000000
+  },
+  {
+    "sector": "337900/mattresses, blinds and shades/us",
+    "amount": 10166000000
+  },
+  {
+    "sector": "339112/surgical and medical instruments/us",
+    "amount": 21294000000
+  },
+  {
+    "sector": "339113/surgical appliance and supplies/us",
+    "amount": 15748000000
+  },
+  {
+    "sector": "339114/dental equipment and supplies/us",
+    "amount": 1919000000
+  },
+  {
+    "sector": "339115/ophthalmic goods/us",
+    "amount": 9566000000
+  },
+  {
+    "sector": "339116/dental laboratories/us",
+    "amount": 0
+  },
+  {
+    "sector": "339910/jewelry and silverware/us",
+    "amount": 16884000000
+  },
+  {
+    "sector": "339920/sporting and athletic goods/us",
+    "amount": 14152000000
+  },
+  {
+    "sector": "339930/dolls, toys, and games/us",
+    "amount": 16652000000
+  },
+  {
+    "sector": "339940/office supplies (not paper)/us",
+    "amount": 2531000000
+  },
+  {
+    "sector": "339950/signs/us",
+    "amount": 7168000000
+  },
+  {
+    "sector": "339990/gaskets, seals, musical instruments, fasteners, brooms, brushes, mop and other misc. goods/us",
+    "amount": 19218000000
+  },
+  {
+    "sector": "4200id/customs duties/us",
+    "amount": 0
+  },
+  {
+    "sector": "423100/motor vehicle and motor vehicle parts and supplies/us",
+    "amount": 47254000000
+  },
+  {
+    "sector": "423400/professional and commercial equipment and supplies/us",
+    "amount": 105015000000
+  },
+  {
+    "sector": "423600/household appliances and electrical and electronic goods/us",
+    "amount": 63074000000
+  },
+  {
+    "sector": "423800/machinery, equipment, and supplies/us",
+    "amount": 64204000000
+  },
+  {
+    "sector": "423a00/other durable goods merchant wholesalers/us",
+    "amount": 66241000000
+  },
+  {
+    "sector": "424200/drugs and druggists sundries/us",
+    "amount": 78684000000
+  },
+  {
+    "sector": "424400/grocery and related product wholesalers/us",
+    "amount": 66224000000
+  },
+  {
+    "sector": "424700/petroleum and petroleum products/us",
+    "amount": 64113000000
+  },
+  {
+    "sector": "424a00/other nondurable goods merchant wholesalers/us",
+    "amount": 129231000000
+  },
+  {
+    "sector": "425000/wholesale electronic markets and agents and brokers/us",
+    "amount": 16256000000
+  },
+  {
+    "sector": "441000/vehicles and parts sales/us",
+    "amount": 138820000000
+  },
+  {
+    "sector": "444000/building material and garden equipment and supplies dealers/us",
+    "amount": 42784000000
+  },
+  {
+    "sector": "445000/food and beverage stores/us",
+    "amount": 186954000000
+  },
+  {
+    "sector": "446000/health and personal care stores/us",
+    "amount": 95517000000
+  },
+  {
+    "sector": "447000/gasoline stations/us",
+    "amount": 58165000000
+  },
+  {
+    "sector": "448000/clothing and clothing accessories stores/us",
+    "amount": 121927000000
+  },
+  {
+    "sector": "452000/general merchandise stores/us",
+    "amount": 191841000000
+  },
+  {
+    "sector": "454000/nonstore retailers/us",
+    "amount": 149643000000
+  },
+  {
+    "sector": "481000/air transport/us",
+    "amount": 107094000000
+  },
+  {
+    "sector": "482000/rail transport/us",
+    "amount": 10672000000
+  },
+  {
+    "sector": "483000/water transport (boats, ships, ferries)/us",
+    "amount": 17732000000
+  },
+  {
+    "sector": "484000/truck transport/us",
+    "amount": 98406000000
+  },
+  {
+    "sector": "485000/passenger ground transport/us",
+    "amount": 33220000000
+  },
+  {
+    "sector": "486000/pipeline transport/us",
+    "amount": 2079000000
+  },
+  {
+    "sector": "48a000/scenic and sightseeing transportation and support activities for transportation/us",
+    "amount": 13189000000
+  },
+  {
+    "sector": "491000/postal service/us",
+    "amount": 7595000000
+  },
+  {
+    "sector": "492000/couriers and messengers/us",
+    "amount": 4880000000
+  },
+  {
+    "sector": "493000/warehousing/us",
+    "amount": 164000000
+  },
+  {
+    "sector": "4b0000/all other retail/us",
+    "amount": 177863000000
+  },
+  {
+    "sector": "511110/newspapers/us",
+    "amount": 7864000000
+  },
+  {
+    "sector": "511120/magazines and journals/us",
+    "amount": 7554000000
+  },
+  {
+    "sector": "511130/books/us",
+    "amount": 21193000000
+  },
+  {
+    "sector": "5111a0/directory, mailing list, and other publishers/us",
+    "amount": 6976000000
+  },
+  {
+    "sector": "511200/software/us",
+    "amount": 96526000000
+  },
+  {
+    "sector": "512100/movies and film/us",
+    "amount": 48787000000
+  },
+  {
+    "sector": "512200/sound recording/us",
+    "amount": 8068000000
+  },
+  {
+    "sector": "515100/radio and television/us",
+    "amount": 16652000000
+  },
+  {
+    "sector": "515200/cable and subscription programming/us",
+    "amount": 13153000000
+  },
+  {
+    "sector": "517110/telecommunications/us",
+    "amount": 181470000000
+  },
+  {
+    "sector": "517210/wireless telecommunications/us",
+    "amount": 104817000000
+  },
+  {
+    "sector": "517a00/satellite, telecommunications resellers, and all other telecommunications/us",
+    "amount": 7180000000
+  },
+  {
+    "sector": "518200/data processing and hosting/us",
+    "amount": 33377000000
+  },
+  {
+    "sector": "519130/internet publishing and broadcasting/us",
+    "amount": 11206000000
+  },
+  {
+    "sector": "5191a0/news syndicates, libraries, archives, internet publishing and all other information services/us",
+    "amount": 4357000000
+  },
+  {
+    "sector": "522a00/nondepository credit intermediation and related activities/us",
+    "amount": 33909000000
+  },
+  {
+    "sector": "523900/investment advice, portfolio management, and other financial advising services/us",
+    "amount": 174241000000
+  },
+  {
+    "sector": "523a00/securities and commodities brokerage and exchanges/us",
+    "amount": 31727000000
+  },
+  {
+    "sector": "524113/direct life insurance carriers/us",
+    "amount": 79206000000
+  },
+  {
+    "sector": "5241xx/insurance carriers, except direct life/us",
+    "amount": 223048000000
+  },
+  {
+    "sector": "524200/insurance agencies and brokerages/us",
+    "amount": 0
+  },
+  {
+    "sector": "525000/funds, trusts, and financial vehicles/us",
+    "amount": 128515000000
+  },
+  {
+    "sector": "52a000/monetary authorities and depository credit intermediation/us",
+    "amount": 154915000000
+  },
+  {
+    "sector": "531hso/owner-occupied housing/us",
+    "amount": 1276281000000
+  },
+  {
+    "sector": "531hst/tenant-occupied housing/us",
+    "amount": 425960000000
+  },
+  {
+    "sector": "531ore/other real estate/us",
+    "amount": 102218000000
+  },
+  {
+    "sector": "532100/vehicle rental and leasing/us",
+    "amount": 50332000000
+  },
+  {
+    "sector": "532400/commercial equipment rental/us",
+    "amount": 511000000
+  },
+  {
+    "sector": "532a00/consumer goods and general rental centers/us",
+    "amount": 20037000000
+  },
+  {
+    "sector": "533000/lessors of nonfinancial intangible assets/us",
+    "amount": 0
+  },
+  {
+    "sector": "541100/legal services/us",
+    "amount": 105289000000
+  },
+  {
+    "sector": "541200/accounting, tax preparation, bookkeeping, and payroll/us",
+    "amount": 15271000000
+  },
+  {
+    "sector": "541300/architectural, engineering, and related services/us",
+    "amount": 43449000000
+  },
+  {
+    "sector": "541400/specialized design/us",
+    "amount": 3797000000
+  },
+  {
+    "sector": "541511/custom computer programming/us",
+    "amount": 201509000000
+  },
+  {
+    "sector": "541512/computer systems design/us",
+    "amount": 21917000000
+  },
+  {
+    "sector": "54151a/other computer related services, including facilities management/us",
+    "amount": 0
+  },
+  {
+    "sector": "541610/management consulting/us",
+    "amount": 0
+  },
+  {
+    "sector": "5416a0/environmental and other technical consulting services/us",
+    "amount": 0
+  },
+  {
+    "sector": "541700/scientific research and development/us",
+    "amount": 466569000000
+  },
+  {
+    "sector": "541800/advertising and public relations/us",
+    "amount": 1524000000
+  },
+  {
+    "sector": "541920/photographers/us",
+    "amount": 7618000000
+  },
+  {
+    "sector": "541940/veterinarians/us",
+    "amount": 22482000000
+  },
+  {
+    "sector": "5419a0/marketing research and all other miscellaneous professional, scientific, and technical services/us",
+    "amount": 0
+  },
+  {
+    "sector": "550000/company and enterprise management/us",
+    "amount": 0
+  },
+  {
+    "sector": "561100/office administration/us",
+    "amount": 0
+  },
+  {
+    "sector": "561200/facilities support/us",
+    "amount": 0
+  },
+  {
+    "sector": "561300/employment services/us",
+    "amount": 1058000000
+  },
+  {
+    "sector": "561400/business support/us",
+    "amount": 4034000000
+  },
+  {
+    "sector": "561500/travel arrangement and reservation/us",
+    "amount": 15863000000
+  },
+  {
+    "sector": "561600/investigation and security/us",
+    "amount": 9167000000
+  },
+  {
+    "sector": "561700/buildings and dwellings services/us",
+    "amount": 14733000000
+  },
+  {
+    "sector": "561900/other support services/us",
+    "amount": 3146000000
+  },
+  {
+    "sector": "562111/solid waste collection/us",
+    "amount": 17194210000
+  },
+  {
+    "sector": "562212/solid waste landfilling/us",
+    "amount": 2309670000
+  },
+  {
+    "sector": "562213/solid waste combustors and incinerators/us",
+    "amount": 23330000
+  },
+  {
+    "sector": "562910/remediation services/us",
+    "amount": 1096510000
+  },
+  {
+    "sector": "562920/material separation/recovery facilities/us",
+    "amount": 746560000
+  },
+  {
+    "sector": "562haz/hazardous wate collection treatment and disposal/us",
+    "amount": 186640000
+  },
+  {
+    "sector": "562oth/other waste collection and treatment services/us",
+    "amount": 1773080000
+  },
+  {
+    "sector": "611100/elementary and secondary schools/us",
+    "amount": 41383000000
+  },
+  {
+    "sector": "611a00/colleges, universities, junior colleges, and professional schools/us",
+    "amount": 203771000000
+  },
+  {
+    "sector": "611b00/other educational services/us",
+    "amount": 55103000000
+  },
+  {
+    "sector": "621100/physicians/us",
+    "amount": 414465000000
+  },
+  {
+    "sector": "621200/dentists/us",
+    "amount": 107155000000
+  },
+  {
+    "sector": "621300/healthcare practitioners (except physicians and dentists)/us",
+    "amount": 80036000000
+  },
+  {
+    "sector": "621400/outpatient healthcare/us",
+    "amount": 101753000000
+  },
+  {
+    "sector": "621500/medical laboratories/us",
+    "amount": 34977000000
+  },
+  {
+    "sector": "621600/home healthcare/us",
+    "amount": 87311000000
+  },
+  {
+    "sector": "621900/ambulances/us",
+    "amount": 22480000000
+  },
+  {
+    "sector": "622000/hospitals/us",
+    "amount": 853565000000
+  },
+  {
+    "sector": "623a00/nursing and community care facilities/us",
+    "amount": 166284000000
+  },
+  {
+    "sector": "623b00/residential mental retardation, mental health, substance abuse and other facilities/us",
+    "amount": 40587000000
+  },
+  {
+    "sector": "624100/individual and family services/us",
+    "amount": 80482000000
+  },
+  {
+    "sector": "624400/child day care/us",
+    "amount": 46979000000
+  },
+  {
+    "sector": "624a00/community food, housing, and other relief services, including rehabilitation services/us",
+    "amount": 43641000000
+  },
+  {
+    "sector": "711100/performances/us",
+    "amount": 23703000000
+  },
+  {
+    "sector": "711200/sports/us",
+    "amount": 15853000000
+  },
+  {
+    "sector": "711500/independent artists, writers, and performers/us",
+    "amount": 628000000
+  },
+  {
+    "sector": "711a00/promoters and agents/us",
+    "amount": 11322000000
+  },
+  {
+    "sector": "712000/museums, historical sites, zoos, and parks/us",
+    "amount": 14429000000
+  },
+  {
+    "sector": "713100/amusement parks and arcades/us",
+    "amount": 11847000000
+  },
+  {
+    "sector": "713200/gambling establishments (except casino hotels)/us",
+    "amount": 89840000000
+  },
+  {
+    "sector": "713900/golf courses, marinas, ski resorts, fitness and other rec centers and industries/us",
+    "amount": 61115000000
+  },
+  {
+    "sector": "721000/hotels and campgrounds/us",
+    "amount": 123944000000
+  },
+  {
+    "sector": "722110/full-service restaurants/us",
+    "amount": 213581000000
+  },
+  {
+    "sector": "722211/limited-service restaurants/us",
+    "amount": 272236000000
+  },
+  {
+    "sector": "722a00/all other food and drinking places/us",
+    "amount": 84785000000
+  },
+  {
+    "sector": "811100/vehicle repair/us",
+    "amount": 138057000000
+  },
+  {
+    "sector": "811200/electronic  equipment repair and maintenance/us",
+    "amount": 4928000000
+  },
+  {
+    "sector": "811300/commercial machinery repair/us",
+    "amount": 0
+  },
+  {
+    "sector": "811400/household goods repair/us",
+    "amount": 17545000000
+  },
+  {
+    "sector": "812100/salons and barber shops/us",
+    "amount": 67356000000
+  },
+  {
+    "sector": "812200/funerary services/us",
+    "amount": 19219000000
+  },
+  {
+    "sector": "812300/dry-cleaning and laundry/us",
+    "amount": 11887000000
+  },
+  {
+    "sector": "812900/pet care, photofinishing, parking and other sundry services/us",
+    "amount": 55872000000
+  },
+  {
+    "sector": "813100/religious organizations/us",
+    "amount": 82389000000
+  },
+  {
+    "sector": "813a00/grantmaking, giving, and social advocacy organizations/us",
+    "amount": 43601000000
+  },
+  {
+    "sector": "813b00/civic, social, professional, and similar organizations/us",
+    "amount": 55260000000
+  },
+  {
+    "sector": "814000/household employees/us",
+    "amount": 17330000000
+  },
+  {
+    "sector": "gslge/state and local government educational services/us",
+    "amount": 718720000000
+  },
+  {
+    "sector": "gslgh/state and local government hospitals and health services/us",
+    "amount": 59805000000
+  },
+  {
+    "sector": "gslgo/state and local government other services/us",
+    "amount": 738204000000
+  },
+  {
+    "sector": "s00102/other federal government enterprises/us",
+    "amount": 0
+  },
+  {
+    "sector": "s00203/other state and local government enterprises/us",
+    "amount": 58679000000
+  },
+  {
+    "sector": "s00300/noncomparable imports/us",
+    "amount": 100573000000
+  },
+  {
+    "sector": "s00401/scrap/us",
+    "amount": -23297000000
+  },
+  {
+    "sector": "s00402/used and secondhand goods/us",
+    "amount": -31309000000
+  },
+  {
+    "sector": "s00500/federal general government (defense)/us",
+    "amount": 650338000000
+  },
+  {
+    "sector": "s00600/federal general government (nondefense)/us",
+    "amount": 348913000000
+  },
+  {
+    "sector": "s00900/rest of the world adjustment/us",
+    "amount": -166344000000
+  }
+]

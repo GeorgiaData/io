@@ -1,0 +1,86 @@
+html {
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.matrix-title {
+  font-family: "Helvetica Neue", Helvetica, "Lato", sans-serif;
+  font-size: 34px;
+  font-weight: 300;
+  text-align: left;
+}
+
+/* td, th {
+    border: 1px solid black;
+  } */
+
+table {
+    border-collapse: collapse;
+  }
+
+th.indicator >div{
+    transform: translate(0px, 0px) rotate(315deg);
+    width: 22px;
+    padding: 4px;
+    padding-top: 5px;
+    white-space: nowrap;
+}
+
+th.indicator{
+    padding-left: 4px;
+    font-weight: normal;
+    font-size: 0.8em;
+    vertical-align: bottom;
+}
+
+.indicator-group-parent {
+  padding-left: 10px;
+  margin-bottom: -10px;
+  /* slide settitle holder down */
+  min-width: 42px;
+}
+
+.indicator-group {
+  min-width: 160px;
+  /* length of line above set-titles */
+  display: inline-block;
+  text-align: left;
+  padding: 4px;
+  border-top: 1px solid #ccc;
+  padding-top: 4px;
+  padding-left: 20px;
+  /* left of title under line */
+  margin-left: 0px;
+  /* slide angled set-titles up and to the right */
+  margin-bottom: -4px;
+}
+
+.groupLabel{
+  background-color: #fafafa;
+}
+
+
+a {
+  text-decoration: none;
+  color: #555;
+  cursor: pointer;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.io th {
+  font-weight: normal;
+  vertical-align: bottom;
+  font-size: 0.8em;
+}
+
+.indicator-row {
+  height: 170px;
+}

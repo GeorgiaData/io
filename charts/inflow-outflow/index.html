@@ -6,16 +6,29 @@
 <title>Inflow-Outflow</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
+
+<link rel="stylesheet" type="text/css" href="../../build/slider.css">
+
 <link type="text/css" href="../../../localsite/css/base.css" rel="stylesheet" />
 <script type="text/javascript" src="../../../localsite/js/d3.v5.min.js"></script>
 <!--script type="text/javascript" src="../../../localsite/js/showdown.min.js"></script-->
 <script type="text/javascript" src="../../../localsite/js/jquery.min.js"></script>
 <script type="text/javascript" src="../../../localsite/js/localsite.js"></script>
 <script type="text/javascript" src="../../../localsite/js/navigation.js"></script>
-
+<script type="text/javascript" src="../../../localsite/js/map-filters.js" id="/localsite/js/map-filters.js"></script>
 <!--
 <link rel="stylesheet" type="text/css" href="/localsite/css/bootstrap.darkly.min.css"/>
 -->
+
+<script>
+    param.titleArray = ["US","EPA"]
+    param.startTitle = "Test"
+    param.headerLogo = "<img src='/io/img/logo/epa.png' style='width:28px'>";
+    //param.headerFile = "../community/header.html"
+    //param.footer = "../community/footer.html"
+    
+    $(window).scroll(function(){let toZero = 1-$(window).scrollTop()/200; $(".herocenter").css("opacity", toZero); if (toZero <= 0) {$(".herocenter").hide()} else {$(".herocenter").show();}});
+</script>
 
 <style>
 #impactIcons div {
@@ -34,6 +47,7 @@
 #impactIcons div:hover {
     cursor: pointer;
     background-color: rgba(33,33,33,.8);
+    color: #fff;
 }
 .fixedBkgd {
     position: fixed;
@@ -162,6 +176,7 @@
 </head>
 
 <body>
+
 <div style="padding:0px">
     <div style="position:relative; width:100%">
         <!--  
@@ -180,23 +195,29 @@
         <img class="fixedBkgd backgroundAbsoluteX" src="img/bkgd.jpg" style="width:100%;" alt="">
         -->
 
-        <div class="contentpadding" id="impactTopHolder" style="position:absolute; top:0px; right:0px; width:100%; padding-bottom:20px;">
+        <div class="contentpadding" id="impactTopHolder" style="overflow:auto; padding-bottom:20px;">
 
             <div style="float:right;" class="hideMobile">
                 <div id="impactIcons">
-                    <!-- ,MGHG,OGHG,HRSP,OZON,SMOG,HAPS some must be wrong -->
-                    <div onclick="goHash({'set':'air','indicators':'GCC'});">Air</div>
+                    <!--  some must be wrong -->
+                    <div onclick="goHash({'set':'air','indicators':'GCC,MGHG,OGHG,HRSP,OZON,SMOG,HAPS'});">Air</div>
                     <div onclick="goHash({'set':'water','indicators':'WATR,ACID,EUTR,ETOX'});">Water</div>
-                    <div onclick="goHash({'set':'land','indicators':'MNRL,PEST,METL,CRHW,CMSW,FMSW,CCDD'});">Land</div>
-                    <div onclick="goHash({'set':'energy','indicators':'NNRG,RNRG,ENRG'});">Energy</div>
+                    <div onclick="goHash({'set':'land','indicators':'LAND,MNRL,PEST,METL,CRHW,CMSW,FMSW,CCDD '});">Land</div>
+                    <div onclick="goHash({'set':'energy','indicators':'ENRG,NNRG,RNRG'});">Energy</div>
                     <div onclick="goHash({'set':'wealth','indicators':'VADD,JOBS'});" class="active">Wealth</div>
-                    <div onclick="goHash({'set':'health','indicators':'HCAN,HNCN,HTOX'});">Health</div>
+                    <div onclick="goHash({'set':'health','indicators':'HTOX,HCAN,HNCN,HTOX'});">Health</div>
                 </div><br>
 
                 
             </div>
 
             <div style="float:left;">
+                
+                <div style="clear:both; font-size: 13px">
+                    <a href="../../../localsite/info/#regiontitle=Southeast+Coastal&geo=US13051,US13029,US13179,US13191">Coastal Georgia</a> <span style="position:absolute; font-size:35px; line-height:13px; padding:3px 0 0 1px">&#8227;</span> &nbsp;&nbsp; &nbsp; 
+                    <a href="../../../localsite/info/#show=bioeconomy">Bioeconomy</a>
+                </div>
+
                 <!--
                 Preventing Water Eutrophication
                 Excessive Growth of Algae
@@ -206,26 +227,33 @@
                 -->
                 <h1 id="pageTitle" class="h1-home" style="margin-top:0px; margin-bottom:10px;">Jobs and Value Added</h1>
 
-                <div style="clear:both; font-size: 13px">
-                <a href="#sectors=326210:100,335991:100&page=1&count=10">Inflow Outflow</a> | 
-                <a href="../../charts/sankey/">Flow Diagram</a>
-                </div>
+                
             </div>
         </div>
     </div>
 
-    <br><br><br><br>
+    
     <!--
-    <br><br><br><br>
+    <br><br><br>
+    -->
+    <div class="contentpadding" style="padding-bottom:0px">
+        <div style="clear:both; font-size: 13px">
+            <a href="#sectors=326210,335991&indicators=VADD">Inflow Outflow</a> | 
+            <a href="../../charts/sankey/">Flow Diagram</a> | 
+            <a href="../../charts/bubble/">Bubble Chart</a> | 
+            <a href="../../charts/">More</a>
+        </div>
+    </div>
+
+    <!-- Display Map Here -->
+    <!--
+    <script type="text/javascript" src="../../../localsite/js/map-embed.js"></script>
     -->
 
-    <div class="localX" style="displayX:none">
-        <!--
-        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-        -->
+    <div class="localX" style="display:none">
 
-        <div class="contentpadding" style="border-bottom:1px solid #ccc; padding-bottom:0px">
-            <div style="background-colorX:#559; padding:30px; max-width:700px; border-radius:8px">
+        <div class="contentpadding" style="border-bottom:1px solid #ccc; padding-bottom:20px">
+            <div style="background-colorX:#559; paddingX:30px; max-width:700px; border-radius:8px">
                 <h1 style="padding-top:0px; font-weight: bolder;">
                     What would you like to explore?
                     <!--
@@ -233,7 +261,7 @@
                     -->
                 </h1>
                 <div class="buttonLinks" style="margin:20px 20px 0 0; font-size: 13px">
-                    <a href="../../../localsite/info/#geo=US13285">Show Troup County</a><br>
+                    <!--<a href="../../../localsite/info/#geo=US13285">Show Troup County</a><br>-->
                     <a href="../../../localsite/info/#show=vehicles">Show Automotive Industry</a><br>
                     <!--
                     <a href="../../../localsite/info/#show=ev">Show Combustion and EV</a><br>
@@ -244,7 +272,7 @@
                 </div>
             </div>
         </div>
-        
+        <br><br>
     </div>
 
 
@@ -293,7 +321,7 @@
     // Not working
     //config.naics = naicsCodes;
 
-    var modelID = config.get().model || 'USEEIO'; // USEEIOv1.2 currently shows over $300 for agriculture
+    var modelID = config.get().model || 'USEEIOv2.0'; // USEEIOv1.2 currently shows over $300 for agriculture
     //var modelID = 'USEEIOv1.2';
 
     var model = useeio.model({

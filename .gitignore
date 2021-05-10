@@ -1,5 +1,7 @@
+build/api/USEEIO/
+build/api/USEEIOv1.2
+build/apidoc/
 node_modules/
-build/
 dist/
 .vscode/
 *.pdf
